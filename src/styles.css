@@ -1,1 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+/* @import "tailwindcss/base"; */
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "primeicons/primeicons.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  font-family: "Nunito";
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --mainColor: #6366f1;
+  --mainColorHover: #4f46e5;
+  --mainColorLight: #b1b3f8;
+  --mainColorUltraLight: #E0E7FF;
+
+  --bgWhite100: #f9fafb;
+  --bgGray100: #e5e7eb;
+  --bgGray200: #f7f5f2;
+  --grayText: #4b5563;
+  --gray: #d1d5db;
+  --grayHover: rgba(0, 0, 0, 0.08);
+
+  --focusBoxShadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--mainColorLight);
+  --borderRadius: 4px;
+  --sideOffset: 2rem;
+  --sidebarWidth: 240px;
+  --transitionTime: 0.15s;
+}
+
+button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+}
+
+.button {
+  height: 42px;
+  font-size: 14px;
+  background-color: var(--mainColor);
+  border-radius: var(--borderRadius);
+  border: none;
+  color: white;
+  padding: 0 12px;
+  transition: var(--transitionTime);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--mainColorHover);
+  }
+
+  &:focus {
+    box-shadow: var(--focusBoxShadow);
+  }
+}
+
+.button-icon {
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+}
+
+.button-text {
+  background-color: transparent;
+  color: var(--grayText);
+  border: 1px solid var(--gray);
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparent;
+    border-color: var(--mainColor);
+  }
+}
+
+input {
+  height: 42px;
+  padding: 0 12px;
+  font-size: 14px;
+  border: 1px solid var(--gray);
+  border-radius: var(--borderRadius);
+}
+
+main {
+  padding: 0 var(--sideOffset);
+}

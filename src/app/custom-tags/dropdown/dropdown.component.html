@@ -1,0 +1,31 @@
+<div class="dropdown">
+  <div class="input-container">
+    <span
+      (click)="toggleIsValueOpen()"
+      [class]="(currentValue ? '' : 'text-[var(--grayText)]') + ' w-full input'"
+    >
+      {{ currentValue ?? placeholder }}
+    </span>
+
+    @if (currentValue) {
+    <span class="pi pi-times close-icon" (click)="clearValue()"></span>
+    }
+    <!-- <div class="h-full w-4" (click)="toggleIsValueOpen()"> -->
+    <span
+      (click)="toggleIsValueOpen()"
+      [class]="(isValuesOpen && 'rotated') + ' pi pi-angle-down arrow-icon'"
+    ></span>
+    <!-- </div> -->
+  </div>
+
+  <div [class]="isValuesOpen ? 'items open-items' : 'items'">
+    @for (el of values; track $index) {
+    <div
+      [class]="(el === currentValue ? 'selected' : '') + ' item'"
+      (click)="changeValue(el)"
+    >
+      {{ optionLabel ? el[optionLabel] : el }}
+    </div>
+    }
+  </div>
+</div>

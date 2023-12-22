@@ -1,0 +1,15 @@
+:host {
+  header {
+    display: flex;
+    padding: var(--sideOffset) 0;
+    justify-content: right;
+    align-items: center;
+    background-color: white;
+    backdrop-filter: blur(8px);
+    position: sticky;
+    gap: 8px;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}

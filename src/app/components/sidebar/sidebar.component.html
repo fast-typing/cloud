@@ -1,0 +1,21 @@
+<div class="sidebar-container">
+  <div class="sidebar">
+    <h1 (click)="routeTo('/')">ЛОГОТИП!</h1>
+    <a (click)="routeTo('/')" [class.active]="isNowUrl('/')">
+      <span class="pi pi-file"></span>
+      <span>Все файлы</span>
+    </a>
+    <a (click)="routeTo('/recent')" [class.active]="isNowUrl('/recent')">
+      <span class="pi pi-clock"></span>
+      <span>Недавние</span>
+    </a>
+    <a (click)="routeTo('/favorite')" [class.active]="isNowUrl('/favorite')">
+      <span class="pi pi-star"></span>
+      <span>Израбнное</span>
+    </a>
+    <a (click)="routeTo('/trash')" [class.active]="isNowUrl('/trash')">
+      <span class="pi pi-trash"></span>
+      <span>Корзина</span>
+    </a>
+  </div>
+</div>

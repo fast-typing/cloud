@@ -1,0 +1,13 @@
+<header>
+  <div class="button button-text flex gap-2 items-center" (click)="openModal()">
+    <span class="pi pi-search"></span>
+    <span>Поиск</span>
+  </div>
+  <button class="button button-icon" (click)="routeTo('/profile/123')">
+    <span class="pi pi-user"></span>
+  </button>
+</header>
+
+@if (isModalOpen) {
+<app-modal-search (onModalChange)="setModal($event)" />
+}

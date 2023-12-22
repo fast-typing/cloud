@@ -1,0 +1,51 @@
+<div class="modal-container" (click)="closeModal()"></div>
+<div class="modal-content">
+  <form (submit)="findBySearch($event)" class="pseudo-input">
+    <span (click)="findBySearch($event)" class="pi pi-search"></span>
+    <input
+      [formControl]="searchText"
+      type="text"
+      placeholder="Поиск на cloudy"
+    />
+    <span class="pi pi-filter" (click)="toggleFilter()"></span>
+  </form>
+
+  @if (isFilterOpen) {
+  <form [formGroup]="filterForm">
+    <div class="inputs mb-4">
+      <div class="input-container" style="grid-area: left">
+        <span>Тип</span>
+        <app-dropdown
+          placeholder="Выберите тип"
+          [values]="types"
+          formControlName="type"
+        />
+      </div>
+      <div class="input-container" style="grid-area: right">
+        <span>Размер</span>
+        <app-dropdown
+          placeholder="Выберите размер"
+          [values]="fileSizes"
+          formControlName="fileSize"
+        />
+      </div>
+      <div class="input-container" style="grid-area: middle">
+        <span>Содежрит слова</span>
+        <input placeholder="Содежрит слова" formControlName="fileName" />
+      </div>
+    </div>
+    <div class="flex justify-between gap-2">
+      <button class="button w-full">Применить</button>
+      <button class="button w-full">Очистить фильтр</button>
+    </div>
+  </form>
+  }
+
+  <div class="grid gap-2">
+    @for (item of items; track $index) {
+    <div class="h-8 bg-slate-300 p-4">
+      {{ item }}
+    </div>
+    }
+  </div>
+</div>

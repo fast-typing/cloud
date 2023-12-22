@@ -1,0 +1,28 @@
+<div>
+  <div class="flex justify-between">
+    <h2>Все файла</h2>
+    <div class="flex justify-between gap-4">
+      <span class="pi pi-bars"></span>
+      <span class="pi pi-table"></span>
+    </div>
+  </div>
+  <div>
+    <div>
+      <span>Фильтры</span>
+      <div>
+        <span> Файлы </span>
+        <span> Папки </span>
+      </div>
+    </div>
+    <span> Название </span>
+    <span> Местоположение </span>
+    <span> Изменение </span>
+    <div>
+      @for (item of files$ | async; track $index) {
+      <app-file></app-file>
+      } @empty {
+      <i class="pi pi-spinner load" style="font-size: 2rem; color: var(--mainColor)"></i>
+      }
+    </div>
+  </div>
+</div>
