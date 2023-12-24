@@ -1,8 +1,8 @@
-/* @import "tailwindcss/base"; */
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
 @import "primeicons/primeicons.css";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@200;300;400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   font-family: "Nunito";
@@ -60,6 +60,12 @@ button {
   width: 42px;
   height: 42px;
   cursor: pointer;
+  border-radius: 99999px;
+  transition: var(--transitionTime);
+
+  &:hover {
+    background-color: var(--grayHover);
+  }
 }
 
 .button-text {

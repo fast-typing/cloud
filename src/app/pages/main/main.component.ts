@@ -1,22 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FileComponent } from "./file/file.component";
-import { HTTPService } from '../../services/http.service';
-import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { FilesTableComponent } from "./files-table/files-table.component";
+import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.css',
-  imports: [FileComponent, CommonModule],
+    selector: 'app-main',
+    standalone: true,
+    templateUrl: './main.component.html',
+    styleUrl: './main.component.css',
+    imports: [CommonModule, FilesTableComponent]
 })
-export class MainComponent implements OnInit {
-  files$!: Observable<any[]>
+export class MainComponent  {
 
-  constructor(private http: HTTPService) { }
-
-  ngOnInit(): void {
-    this.files$ = this.http.getFiles()
-  }
 }
